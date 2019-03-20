@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Firestore_increment_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="vZe-ld-eX7">
+                                <rect key="frame" x="71.5" y="321" width="232" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Po-ul0">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="44"/>
+                                        <state key="normal" title="Increment"/>
+                                        <connections>
+                                            <action selector="increment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vXI-08-yPT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNM-ZO-kd5">
+                                        <rect key="frame" x="156" y="0.0" width="76" height="44"/>
+                                        <state key="normal" title="Decrement"/>
+                                        <connections>
+                                            <action selector="decrement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q8B-dA-nRc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gyF-f6-iSD"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="path: xxx" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e85-un-b2C">
+                                <rect key="frame" x="16" y="200" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count: xxx" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R22-nn-kqT">
+                                <rect key="frame" x="16" y="236.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vZe-ld-eX7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="04E-AI-tbv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R22-nn-kqT" secondAttribute="trailing" constant="16" id="6NH-dH-qEs"/>
+                            <constraint firstItem="vZe-ld-eX7" firstAttribute="top" secondItem="R22-nn-kqT" secondAttribute="bottom" constant="64" id="J4z-TN-lzh"/>
+                            <constraint firstItem="e85-un-b2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Luf-tH-E9n"/>
+                            <constraint firstItem="R22-nn-kqT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qkq-n0-8se"/>
+                            <constraint firstItem="R22-nn-kqT" firstAttribute="top" secondItem="e85-un-b2C" secondAttribute="bottom" constant="16" id="m1J-Sz-QYl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e85-un-b2C" secondAttribute="trailing" constant="16" id="twl-qq-yfj"/>
+                            <constraint firstItem="e85-un-b2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="uI7-4G-LsO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="R22-nn-kqT" id="PHa-Eh-aNK"/>
+                        <outlet property="pathLabel" destination="e85-un-b2C" id="SkI-L7-TXV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
